@@ -52,15 +52,20 @@ int API_wallLeft() {
 }
 
 int API_moveForward() {
-    return getAck("moveForward");
+    moveForward(BASE_SPEED, BASE_SPEED);
+    delay(1000);  // Adjust timing
+    stopMotors();
+    return 1;
 }
 
 void API_turnRight() {
-    getAck("turnRight");
+    moveRight(BASE_SPEED);
+    delay(500);
 }
 
 void API_turnLeft() {
-    getAck("turnLeft");
+    moveLeft(BASE_SPEED);
+    delay(500);
 }
 
 void API_setWall(int x, int y, char direction) {
